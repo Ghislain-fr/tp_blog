@@ -1,0 +1,31 @@
+<form action="add_article.php" method="post" enctype="multipart/form-data" class="w-75 ">
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Titre</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1"name="titre" placeholder="titre" required>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Contenu</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" name="contenu" rows="3" required></textarea>
+</div>
+<div class="mb-3 row">
+
+<div class="col">
+    <label for="validationDefault04" class="form-label">Categorie</label>
+    <select class="form-select " id="validationDefault04" name="categorie" >
+      <?php foreach($categories as $categorie): ?>
+        <option value="<?= $categorie['id'] ?>" ><?= $categorie['nom']; ?></option>
+      <?php   endforeach  ?>
+    </select>
+  </div>
+
+  <div class="col-md">
+  <label for="formFileLg" class="form-label">Image article</label>
+  <input class="form-control form-control-lg" id="formFileLg" type="file" name="file" required>
+</div>
+</div>
+  
+<div class="col-12 mt-3">
+    <button class="btn btn-primary" type="submit">Enregister</button>
+  </div>
+</div>
+</form>

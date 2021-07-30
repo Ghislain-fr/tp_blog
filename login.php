@@ -2,10 +2,8 @@
 
 session_start();
 
-require 'database/connection.php';
-
+require "database.php";
 $db = getConnection();
-
 // Tester si des données proviennent du formulaire
 if (! empty($_POST)) {
 

@@ -2,7 +2,10 @@
 
 session_start();
 
-require 'database/connection.php';
+// require 'database/connection.php';
+
+require 'database.php';
+
 
 $db = getConnection();
 

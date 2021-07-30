@@ -1,0 +1,25 @@
+
+<table class="table table-dark table-striped table-hover">
+  <thead>
+    <tr>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>CONTENU</th>
+        <th>DATE CREATION</th>
+        <th>IMAGE</th>
+        <th>ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php foreach($listes as $liste):        ?>
+    <tr class="">
+     <td><?= $liste['id']  ?></td>
+     <td><?= $liste['titre']  ?></td>
+     <td><?= $liste['contenu']   ?></td>
+     <td><?= $liste['date_creation']  ?></td>
+     <td><img src="<?= $liste['image_article']   ?>"  widt="50" height="50" /> </td>
+     <td><a href="edit_article.php?id=<?= $liste['id'] ?>"><i class="fas fa-edit"></i> Editer</a> | <a href="delete_article.php?id=<?= $liste['id'] ?>"><i class="fas fa-trash-alt"></i> Supprimer</a></td>
+    </tr>
+    <?php endforeach;  ?>
+  </tbody>
+</table>
