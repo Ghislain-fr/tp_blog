@@ -2,7 +2,7 @@
 
 session_start();
 
-require 'connection.php';
+require 'database/connection.php';
 
 $db = getConnection();
 
@@ -36,7 +36,7 @@ if (! empty($_POST)) {
 		exit();
 	}
 
-	// Quand nom d'utilisateur et mot de passe sont OK => connexion de l'utilisateur : on enregistre les infos de l'utilisateur dans la session
+	
 	$_SESSION['auth'] = [
 		'id' => $user['id'],
 		'username' => $user['username'],
@@ -49,4 +49,4 @@ if (! empty($_POST)) {
 
 
 $template = 'login';
-require 'layout.phtml';
+require 'templates/layout.phtml';

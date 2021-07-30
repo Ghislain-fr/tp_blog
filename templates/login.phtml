@@ -1,6 +1,6 @@
-<h1>Se connecter à son compte</h1>
+<h1 class="mt-4">Se connecter à son compte</h1>
 
-<form action="blog_login.php" method="post">
+<form action="login.php" method="post">
 	<?php if (isset($_SESSION['error'])): ?>
 		<aside class="alert alert-danger">
 			<?= $_SESSION['error'] ?>
@@ -9,17 +9,17 @@
 		</aside>
 	<?php endif ?>
 
-<div class="row g-2">
+<div class="row g-2 ">
   <div class="col-md">
-    <div class="form-floating">
-        <label for="username">Taper votre Nom</label>
-		<input type="text" name="username" id="nom" class="form-control">
+    <div class="form-group">
+        <label for="nom">Votre nom : </label>
+		<input type="text" name="username" id="nom" class="form-control" placeholder="Taper votre nom">
     </div>
   </div>
   <div class="col-md">
-    <div class="form-floating">
-        <label for="password">Mot de passe</label>
-        <input type="password" name="password" class="form-control" id="password">
+    <div class="form-group">
+        <label for="password"></label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Taper votre mot de passe">
     </div>
   </div>
     <div class="mt-3">

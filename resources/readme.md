@@ -34,11 +34,15 @@ En bonus :
 
 #### Liste des articles
 
-Page qui affiche la liste des articles (titre, contenu partiel, catégorie, nom de l'auteur, date de création). Les articles sont affichés dans l'ordre antéchronologique (du plus récent au plus ancien), sous forme de liste. Le titre est cliquable et permet d'envoyer vers le détail de l'article. On n'affichera que 10 à 15 articles par page et on affichera le nombre de pages au-dessus de la liste.
+Page qui affiche la liste des articles (titre, contenu partiel, catégorie, nom de l'auteur, date de création).
+Les articles sont affichés dans l'ordre antéchronologique (du plus récent au plus ancien), sous forme de liste.
+Le titre est cliquable et permet d'envoyer vers le détail de l'article.
+On n'affichera que 10 à 15 articles par page et on affichera le nombre de pages au-dessus de la liste.
 
 #### Détail de l'article
 
-Page qui affiche toutes les informations de l'article (titre, contenu, catégorie, auteur, date de création) ainsi que tous les commentaires. Au-dessus de tous les commentaires, un formulaire permettra de rajouter un nouveau commentaire.
+Page qui affiche toutes les informations de l'article (titre, contenu, catégorie, auteur, date de création) ainsi que tous les commentaires.
+Au-dessus de tous les commentaires, un formulaire permettra de rajouter un nouveau commentaire.
 
 #### Enregistrement du commentaire
 
@@ -74,7 +78,9 @@ Le lien sur la page "Liste des articles" permet de supprimer l'article et d'êtr
 
 #### Création de l'article
 
-Ajouter un lien sur la page "Liste des articles" qui amène sur une page avec un formulaire de création d'article. Le champ pour les catégories est une liste déroulante avec toutes les catégories de la base de données. Le champ correspondant à l'auteur (user_id) ne se trouve pas dans le formulaire, il est mis à jour automatiquement à partir du numéro de l'utilisateur connecté (se trouvant dans la session).
+Ajouter un lien sur la page "Liste des articles" qui amène sur une page avec un formulaire de création d'article.
+Le champ pour les catégories est une liste déroulante avec toutes les catégories de la base de données.
+Le champ correspondant à l'auteur (user_id) ne se trouve pas dans le formulaire, il est mis à jour automatiquement à partir du numéro de l'utilisateur connecté (se trouvant dans la session).
 
 #### Liste des catégories
 

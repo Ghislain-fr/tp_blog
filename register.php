@@ -2,10 +2,9 @@
 
 session_start();
 
-$db = new PDO("mysql:host=localhost;dbname=blog;charset=UTF8", 'root', '', [
-	PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-	PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
+require 'database/connection.php';
+
+$db = getConnection();
 
 
 
@@ -22,7 +21,9 @@ if (! empty($_POST)) {
 		$_POST['lastname'],
 		$_POST['firstname']
 	]);
+
 	$userNomEtPrenom = $query->fetchAll();
+
 	if (!empty($userNomEtPrenom)) {
 		$_SESSION['errors']['fullname'] = "Il existe déjà un utilisateur avec ce nom et prénom";
 	}
@@ -43,7 +44,7 @@ if (! empty($_POST)) {
 
 	if ($email) {
 		$_SESSION['errors']['email'] = "Email déjà utilisé";
-		header('Location: register.php');
+		header('Location: index.php');
 		exit();
 	}
 
@@ -52,13 +53,13 @@ if (! empty($_POST)) {
 	$repertoire_avatar = "avatars/";
 	$chemin_avatar = $repertoire_avatar.basename($_FILES['avatar']['name']);
 		// Si l'image n'existe pas
-		if (!file_exists($_FILES['avatar']['tmp_name'])) {
-			$_SESSION['errors']['avatar'] = "L'image n'existe pas";
-		} 
+	if (!file_exists($_FILES['avatar']['tmp_name'])) {
+		$_SESSION['errors']['avatar'] = "L'image n'existe pas";
+	} 
 	
 	// Si il y a au moins 1 erreur :
 	if (count($_SESSION['errors']) > 0) {
-		header('Location: register.php');
+		header('Location: index.php');
 		exit();
 	} 
 	
@@ -82,7 +83,7 @@ if (! empty($_POST)) {
 				password_hash($_POST['password'], PASSWORD_BCRYPT),
 				$chemin_avatar
 			]);
-		header('Location: register.php');
+		header('Location: index.php');
 		exit();
 	}
 }
