@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inscription de l'utilisateur</title>
+</head>
+
+<div class="container my-5">
+      <form action="register.php" method="POST" enctype="multipart/form-data" >
+		<?php if (isset($_SESSION['errors'])): ?>
+			<aside class="alert alert-danger">
+				<ul>
+				<?php foreach (($_SESSION['errors']) as $error): ?>
+					<li> <?= $error ?> </li>
+				<?php endforeach ?>
+				</ul>
+			</aside> 
+			<?php unset($_SESSION['errors']) ?>
+		<?php endif ?>
+
+    	<div class="form-group">
+            <div class="row mb-3">
+              	<div class="col-md">
+					<label for="lastname">Nom : </label>
+					<input id="lastname" class="form-control" type="text" name="lastname" placeholder="Votre nom ">
+             	</div>
+			</div>
+			<div class="row mb-3">
+              	<div class="col-md">
+					<label for="firstname">Prénom : </label>
+					<input id="firstname" class="form-control " type="text" name="firstname" placeholder="Votre prénom">
+             	</div>
+			</div>
+            <div class="row mb-3">
+              	<div class="col-md">
+               	 	<label for="email">Email : </label>
+                	<input id="email" class="form-control" type="email" name="email" placeholder="Votre Email">
+            	</div>
+			</div>
+            <div class="row mb-3">
+				<div class="col-md">
+					<label for="password">Mot de passe : </label>
+					<input id="password" class="form-control" type="password" name="password" placeholder="Votre mot de passe">
+				</div>
+			</div> 
+			<div class="row mb-3">
+				<div class="col-md">
+					<label for="avatar">Avatar : </label>
+					<input id="avatar" class="form-control" type="file" name="avatar" >
+				</div>
+			</div>   
+       	</div>
+     	
+        <input type="submit" class="btn btn-danger mt-5" value="S'inscrire"></input>
+        
+      </form>
+    </div>
+</div>
