@@ -1,0 +1,27 @@
+
+<div class="my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <?php  foreach($others_article as $article):  ?>  
+        <div class="col">
+            <div class="card">
+                <img src="<?= $article['image_article'] ?>" class="card-img-top img-thumbnail" alt="<?= $article['titre'] ?>"  height="300" >
+                <div class="card-body">
+                    <h5 class="card-title"><?= $article['titre'] ?></h5>
+                    <p class="card-text">
+                        <?php  
+                        
+                        if($etat && $article['id'] == $idSelected){
+                            echo substr($article['contenu'], 0);
+                        }else{
+                            
+                           echo substr($article['contenu'], 0, $content);
+                        }           
+                     ?>
+                    </p>
+                    <a href="index.php?contenu=1&id=<?= $article['id'] ?>" class="btn btn-primary">Lire plus</a>
+                </div>
+            </div>
+        </div>
+    <?php   endforeach ?>
+    </div>
+</div>

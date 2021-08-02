@@ -13,8 +13,8 @@ if(!empty($_POST)){
     }else{
 
         $path = $_FILES['file']['name'];
-            $ext = pathinfo($path, PATHINFO_EXTENSION);
-            $extensions = ['jpeg', 'png'];
+        $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+        $extensions = ['jpeg', 'jpg', 'png'];
 
        if(in_array($ext,$extensions )){
 
@@ -31,18 +31,18 @@ if(!empty($_POST)){
                    $_POST['contenu'],
                    // file_get_contents($_FILES['file']['tmp_name']),
                    $chemin_file,
-                   '1',
+                   $_SESSION['auth']['id'],
                    $_POST['categorie']
                ]);
            
    
                
-        //    si l'enregistrement s'est bien passé on redirige vers liste des articles
-               header("Location: listes_article.php");
+        //    si l'enregistrement s'est bien passé on redirige vers la liste de tous les articles
+               header("Location: index.php");
                exit();
            }
        }else{
-        //    var_dump('ceest le bon type de fichier');
+           var_dump("cest le bon type de fichier lextension du fichier est: $ext");
        }
     }
     
@@ -60,4 +60,6 @@ if(!empty($_POST)){
     require "templates/layout.phtml";
 
 ?>
+
+
 

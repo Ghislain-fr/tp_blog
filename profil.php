@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'database/connection.php';
+require 'database.php';
 
 $db = getConnection();
 if($_SESSION['auth']){

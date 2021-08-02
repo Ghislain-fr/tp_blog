@@ -15,7 +15,7 @@
 <div class="col">
     <label for="validationDefault04" class="form-label">Categorie</label>
     <select class="form-select " id="validationDefault04" name="categorie" >
-        <option selected disabled value=" <?= $default_categorie['id'] ?> "><?= $default_categorie['nom'] ?> <option>
+        <option selected value=" <?= $default_categorie['id'] ?> "><?= $default_categorie['nom'] ?> <option>
       <?php foreach($categories as $categorie): ?>
         <option value="<?= $categorie['id'] ?>" ><?= $categorie['nom']; ?></option>
       <?php   endforeach  ?>
